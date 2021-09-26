@@ -59,14 +59,15 @@ public partial class OVR_Overlay
     protected bool _focus = false;
     public bool focus { get { return _focus; } }
 
-
+    //NOTE: Deprecated??
+    /*
     protected bool _overlayHighQuality = false;
     public bool overlayHighQuality 
     {
         get 
         {
             if(OverlayExists && validHandle)
-                _overlayHighQuality = ( Overlay.GetHighQualityOverlay() == _overlayHandle );
+                _overlayHighQuality = ( Overlay.handle == _overlayHandle );
             
             return _overlayHighQuality;
         }
@@ -75,9 +76,10 @@ public partial class OVR_Overlay
             _overlayHighQuality = value;
 
             if(value && OverlayExists && validHandle)
-                error = Overlay.SetHighQualityOverlay(_overlayHandle);
+                error = Overlay.Set(_overlayHandle);
         }
     }
+    */
 
     protected Color _overlayColor = Color.white;
     public Color overlayColor 
@@ -472,8 +474,10 @@ public partial class OVR_Overlay
         {
             _overlayRenderModel = value;
 
+            /*
             if(OverlayExists && validHandle)
                 error = Overlay.SetOverlayRenderModel(_overlayHandle, _overlayRenderModel, ref _overlayRenderModelColor);
+            */
         }
     }
 
@@ -497,10 +501,10 @@ public partial class OVR_Overlay
             error = Overlay.SetOverlayFlag(_overlayHandle, flag, val);
     }
 
-    public bool overlayFlag_Curved
+    public bool overlayFlag_Panorama
     {
-        get { return GetFlag(VROverlayFlags.Curved); }
-        set { SetFlag(VROverlayFlags.Curved, value); }
+        get { return GetFlag(VROverlayFlags.Panorama); }
+        set { SetFlag(VROverlayFlags.Panorama, value); }
     }
 
     public bool overlayFlag_ShowScrollWheel

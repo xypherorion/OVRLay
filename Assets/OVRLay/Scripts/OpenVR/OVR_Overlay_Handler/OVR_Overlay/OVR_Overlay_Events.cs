@@ -94,14 +94,9 @@ public partial class OVR_Overlay
                 while(bytes[len++] != 0 && len < 7);
                 string input = System.Text.Encoding.UTF8.GetString(bytes, 0, len);
 
-                if(_isMinimal)
-                    txt = input;
-                else
-                {
-                    System.Text.StringBuilder txtB = new System.Text.StringBuilder(1024);
-                    Overlay.GetKeyboardText(txtB, 1024);
-                    txt = txtB.ToString();
-                }
+                System.Text.StringBuilder txtB = new System.Text.StringBuilder(1024);
+                Overlay.GetKeyboardText(txtB, 1024);
+                txt = txtB.ToString();
 
                 onKeyboardInput(txt);
             break;

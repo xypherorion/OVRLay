@@ -89,11 +89,11 @@ public class Unity_Overlay : MonoBehaviour
 	[Space(10)]
 
 	public bool isDashboardOverlay = false;
-
+	/*
 	[Space(10)]
 
 	public bool highQuality = false;
-
+	*/
 	[Space(10)]
 
 	public bool isVisible = true;
@@ -549,12 +549,12 @@ public class Unity_Overlay : MonoBehaviour
 			opts.isVisible = isVisible;
 		}
 
-		if( opts.highQuality != highQuality ) 
-		{
+		/* //Note: Deprecated?
+		if( opts.highQuality != highQuality ) {
 			overlay.overlayHighQuality = highQuality;
-
 			opts.highQuality = highQuality;
 		}
+		*/
 
 		if( opts.colorTint != colorTint ) 
 		{

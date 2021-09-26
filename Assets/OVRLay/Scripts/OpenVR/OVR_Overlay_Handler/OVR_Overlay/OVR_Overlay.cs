@@ -6,7 +6,7 @@ public partial class OVR_Overlay
 {
     public bool UpdateCurrentOverlay()
     {
-        overlayHighQuality = _overlayHighQuality;
+        //overlayHighQuality = _overlayHighQuality;
         overlayColor = _overlayColor;
         overlayAlpha = _overlayAlpha;
         overlayWidthInMeters = _overlayWidthInMeters;
@@ -52,13 +52,10 @@ public partial class OVR_Overlay
         return !ErrorCheck(error);
     }
 
-    private bool _isMinimal = false;
-    public bool OpenKeyboard(string dscrp = "", string fillTxt = "", bool minimal = false)
+    public bool OpenKeyboard(string dscrp = "", string fillTxt = "")
     {
-        _isMinimal = minimal;
-        
         if(OverlayExists)
-            error = Overlay.ShowKeyboard(0, 0, dscrp, 256, fillTxt, minimal, 0);
+            error = Overlay.ShowKeyboard(0, 0, 0, dscrp, 256, fillTxt, 0);
 
         return !ErrorCheck(error);
     }
