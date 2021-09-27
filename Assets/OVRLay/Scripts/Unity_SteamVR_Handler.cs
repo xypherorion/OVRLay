@@ -76,8 +76,9 @@ public class Unity_SteamVR_Handler : MonoBehaviour
 
 	void Update() 
 	{
-		if(autoUpdate)
+		if (autoUpdate) {
 			UpdateHandler();
+		}
 	}
 
 	public void UpdateHandler()

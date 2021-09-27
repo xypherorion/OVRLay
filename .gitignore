@@ -39,3 +39,4 @@ sysinfo.txt
 *.unitypackage
 
 !OVRLay.unitypackage
+*.log

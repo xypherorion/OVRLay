@@ -124,6 +124,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "fb78823d-283e-4b10-8c62-7c3848edd67e",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "53b5a575-2ba3-4b00-b237-3c3926fa5ff8",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -302,6 +318,28 @@
                     "action": "SecondaryTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56f8b11b-6186-4661-b5cc-963f313f91c2",
+                    "path": "<XRController>{LeftHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc9023a7-a9d5-4bee-8036-e6de931a3595",
+                    "path": "<XRController>{LeftHand}/pointerRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -426,6 +464,22 @@
                     "type": "Button",
                     "id": "b20f3aa0-32c6-486d-a9b2-4d8baca0799f",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "5492cc6c-82b6-49d8-b91e-e38640a103f4",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "bcd4407e-acb9-41ac-93f0-cc19caf652fb",
+                    "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": ""
                 }
@@ -606,6 +660,28 @@
                     "action": "SecondaryTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31eb17f4-91d6-425f-9839-b6a1187f606e",
+                    "path": "<XRController>{RightHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5f69340-2213-4ad0-8b8e-40bd2d05df3f",
+                    "path": "<XRController>{RightHand}/pointerRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -656,30 +732,70 @@
             ]
         },
         {
-            "name": "UI",
-            "id": "a725e4f4-1262-4d6f-8a52-b8ba368d4c82",
+            "name": "Mouse",
+            "id": "28f6b415-3caf-4165-9118-92709c582d51",
             "actions": [
                 {
-                    "name": "Click",
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "7b98e8d8-0aa9-4741-8fe2-4963074718b9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Delta",
+                    "type": "Value",
+                    "id": "5ea1dc9a-792f-48b4-a1f2-ef9a1f96593e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Value",
+                    "id": "19045a2d-7f0b-447c-9dba-04d30e613c3a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Left Click",
                     "type": "Button",
-                    "id": "7d87f920-38ab-4a79-9716-27722a02c594",
+                    "id": "ebf7640f-ea06-4370-b34d-7653f9bee0b0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "pointerPosition",
-                    "type": "PassThrough",
-                    "id": "3e8f3014-2311-4c71-9a89-6fffe0d7ae05",
-                    "expectedControlType": "Vector3",
+                    "name": "Right Click",
+                    "type": "Button",
+                    "id": "93cc3c4d-3f8d-4863-afee-59315d07af91",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "pointerRotation",
-                    "type": "PassThrough",
-                    "id": "fff59030-bd11-46a7-96d3-35f8e50a86ca",
-                    "expectedControlType": "Quaternion",
+                    "name": "Middle Click",
+                    "type": "Button",
+                    "id": "315b21fc-aa38-4c85-aae7-489f784a3fa7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Forward Click",
+                    "type": "Button",
+                    "id": "08f4bcd9-97ba-4127-8e84-88b462aac229",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Backward Click",
+                    "type": "Button",
+                    "id": "2a5a9b2e-3eb9-492c-b0af-265d6ab9baec",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -687,34 +803,89 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "78d62036-f819-477f-ba34-5041450a668f",
-                    "path": "<XRController>/triggerPressed",
+                    "id": "323c6448-cfad-4c76-b595-8485434c27af",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR Usage",
-                    "action": "Click",
+                    "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "fc05f8fe-0a9a-49ec-84a5-01ccef667093",
-                    "path": "<XRController>{RightHand}/pointerPosition",
+                    "id": "9ebfa579-18a4-4833-b1af-f5813e991980",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "pointerPosition",
+                    "groups": "XR Usage",
+                    "action": "Delta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "047b05df-5df2-4fcf-81d7-a51f39906c16",
-                    "path": "<XRController>{RightHand}/pointerRotation",
+                    "id": "045332f0-f682-49f2-b2e5-c257de7c81c4",
+                    "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "pointerRotation",
+                    "groups": "XR Usage",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7f32190-6930-4b4b-9881-99577ba02ee9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Left Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de885f0e-03f1-491f-ad6d-3e9dda29df3a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Right Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6e683d8-3a9a-438f-a87e-a0f10d88c82e",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Middle Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3322b8e5-99c3-4a09-9c71-c11388677d17",
+                    "path": "<Mouse>/forwardButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Forward Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65a67183-de94-4d76-82ce-9fe36fe182ad",
+                    "path": "<Mouse>/backButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Backward Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
