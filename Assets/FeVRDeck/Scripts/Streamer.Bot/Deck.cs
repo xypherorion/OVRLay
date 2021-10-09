@@ -12,6 +12,8 @@ using Valve.Newtonsoft.Json;
 namespace Streamer.Bot {
 
     public class Deck : MonoBehaviour {
+        public static string PublicDecksURL = "https://streamer.bot/api/decks-public/";
+
         //Example:
         //https://streamer.bot/api/decks-public/49a1ef0e-461e-4ca7-9b68-44e2ee4956e6 
         public Data.Deck data;
@@ -55,7 +57,7 @@ namespace Streamer.Bot {
                 return default;
             }
             
-            string url = "https://streamer.bot/api/decks-public/" + publicDeckId;
+            string url = PublicDecksURL + publicDeckId;
             Debug.Log("Downloading Public Deck " + url);
 
             using (UnityWebRequest www = UnityWebRequest.Get(url)) {

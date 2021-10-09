@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -43,10 +44,15 @@ namespace Streamer.Bot {
         }
 
         public async void UpdateKey(string key) {
-            PublicDeckKey = key;
+            //Sanitize in case some derp put a whole URL in here
+            //This should probably be a RegEx
+            key = key.Split('/').Last();
+
+            PublicDeckKeyField.text = PublicDeckKey = key;
             PlayerPrefs.SetString(SettingsKey, PublicDeckKey);
             if (!string.IsNullOrEmpty(PublicDeckKey))
                 await deck.Load(PublicDeckKey);
+
         }
     }
 }
