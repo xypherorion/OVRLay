@@ -1,6 +1,6 @@
 # FeVRDeck (0.0.1)
 
-An Overlay Deck Engine designed to be used with https://Streamer.bot/decks built on OVRLay
+An Overlay Deck Engine designed to be used with https://Streamer.bot/user/decks built on OVRLay
 
 ---
 FeVRDeck is a companion to Nate1280's Streamer.Bot and streamer.bot decks website
