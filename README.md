@@ -28,7 +28,8 @@ provides the neccassary OpenVR API's, Plugins, and Unity Prefabs to enable a sor
 - Deck Transform Configuration
 - Space Positioned Decks
 - Deck Visibility Triggers
-- Pads, Knobs, Sliders, and Regions
+- Pads, Knobs, Sliders, and Points
+
 
 
 https://fevr.gg/discord

@@ -234,7 +234,7 @@ namespace Streamer.Bot {
 
                 if(CommandQueue.Count > 0) {
                     while(CommandQueue.TryDequeue(out cmd)) {
-                        await webSocket.SendAsync(new ArraySegment<byte>(Encoding.Default.GetBytes(cmd)), WebSocketMessageType.Text, true, CancellationToken.None);
+                        await webSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(cmd)), WebSocketMessageType.Text, true, CancellationToken.None);
                     }
                 }
 

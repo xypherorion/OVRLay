@@ -3,6 +3,8 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
+/Logs/
+/UserSettings/
 /Assets/AssetStoreTools*
 /Assets/RenderModel_Tests/vr_controller_vive_1_5
 
@@ -27,6 +29,7 @@ ExportedObj/
 *.booproj
 *.svd
 *.pdb
+*.vsconfig
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -39,9 +42,4 @@ sysinfo.txt
 *.unitypackage
 
 !OVRLay.unitypackage
-*.log
-*.log
-*.log
-*.log
-*.log
 *.log
