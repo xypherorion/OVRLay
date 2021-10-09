@@ -29,8 +29,8 @@ provides the neccassary OpenVR API's, Plugins, and Unity Prefabs to enable a sor
 - Space Positioned Decks
 - Deck Visibility Triggers
 - Pads, Knobs, Sliders, and Points
-
-
+- "touch" interaction when not in Dashboard
+- Streamer.Bot OAuth for Private Decks and network Interop
 
 https://fevr.gg/discord
 
@@ -40,3 +40,7 @@ https://github.com/xypherorion/OVRLay/tree/FeVRDeck/releases
 
 
 Gigantic thank you to Ben Otter (user:benotter) for the original OVRLay code!
+
+Credits
+Xypher Orion
+Ben Otter (Original OVRLay Source)
