@@ -609,7 +609,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
 --- !u!225 &4203285570513477197
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -634,8 +634,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b9c145ac04df148b41b7d746f3af52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckButtonPrefab: {fileID: 0}
-  ButtonParentTransform: {fileID: 0}
+  DebugDeckId: 
+  DeckButtonPrefab: {fileID: 5167199719978065320, guid: 698830b774c837c43af17d3115d4472b,
+    type: 3}
+  ButtonParentTransform: {fileID: 4203285570445662058}
+  canvasGroup: {fileID: 4203285570513477197}
 --- !u!1 &4203285570849139140
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +651,7 @@ GameObject:
   - component: {fileID: 4203285570849139142}
   - component: {fileID: 4203285570849139136}
   - component: {fileID: 4203285570849139137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,6 +771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wrist Deck Event System
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545361646562334192, guid: 9211f97626363be4cae67093ae4579fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2545361646562334199, guid: 9211f97626363be4cae67093ae4579fa,
         type: 3}

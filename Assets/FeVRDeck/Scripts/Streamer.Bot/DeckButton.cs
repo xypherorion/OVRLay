@@ -23,7 +23,18 @@ namespace Streamer.Bot {
             this.data = data;
         }
 
-        private void Start() {
+        public void ExecuteAction() {
+            if (!string.IsNullOrWhiteSpace(data.action_id)) {
+                WebSocketClient webClient = FindObjectOfType<WebSocketClient>();
+                if(webClient) {
+                    webClient.SendCommand(data.action_id, data.name, data.action_args?.ToString());
+                }
+            } else {
+                Debug.LogError("Null or Empty Action");
+            }
+        }
+
+        private async void Start() {
             //Check if data is valid by checkind creation timestamp
             if (data.created_at != default) {
                 name = data.name;
@@ -32,7 +43,7 @@ namespace Streamer.Bot {
                 if (image && data.image_url != null) {
                     if (data.image_url != null) {
                         //When this returns, it should set the image.texture for the button
-                        ImageManager.Instance.GetDeckButtonImage(this, "https://streamer.bot" + data.image_url);
+                        await ImageManager.instance.GetDeckButtonImage(this, "https://streamer.bot" + data.image_url);
                     }
                 } else {
                     Debug.Log("Angry image data for Button {data.name}", gameObject);

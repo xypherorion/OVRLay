@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387165577034410682}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 387165578249146940}
   - component: {fileID: 387165578249146943}
   - component: {fileID: 387165578249146915}
+  - component: {fileID: 660656010022008287}
   m_Layer: 8
   m_Name: Head Deck Canvas
   m_TagString: Untagged
@@ -351,7 +352,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
 --- !u!225 &387165578249146915
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -364,6 +365,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &660656010022008287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387165578249146937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b9c145ac04df148b41b7d746f3af52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugDeckId: 
+  DeckButtonPrefab: {fileID: 5167199719978065320, guid: 698830b774c837c43af17d3115d4472b,
+    type: 3}
+  ButtonParentTransform: {fileID: 387165578315946756}
+  canvasGroup: {fileID: 387165578249146915}
 --- !u!1 &387165578315946759
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +631,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 387165578987267499}
-  - component: {fileID: 387165578987267497}
   - component: {fileID: 387165578987267496}
   - component: {fileID: 387165578987267502}
   - component: {fileID: 387165578987267503}
@@ -643,41 +660,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!328 &387165578987267497
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387165578987267498}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 62ae9390467379846b30c46ad8729104, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 8ebc79bdc0b9592459e46d11db523bf3, type: 2}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 2
-  m_AspectRatio: 3
-  m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 0
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!222 &387165578987267496
 CanvasRenderer:
   m_ObjectHideFlags: 0

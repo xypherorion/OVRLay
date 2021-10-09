@@ -181,16 +181,15 @@ public class Unity_Overlay : MonoBehaviour
 	}
 
 	// Event Callbac...Err... Delegates.
-	void OnVisChange(bool visible)
-	{
+	void OnVisChange(bool visible) {
 		isVisible = visible;
-		Debug.Log("Is Visible: " + visible);
+		Debug.Log($"{overlayName} Is {(visible ? "visible" : "invisible")}");
 	}
 
 	void OnDashBoardChange(bool open)
 	{
 		isDashboardOpen = open;
-		Debug.Log("Dashboard Open: " + open);
+		Debug.Log($"{overlayName} Is {(open ? "opened" : "closed")}");
 	}
 
 	void Start () 
@@ -313,28 +312,21 @@ public class Unity_Overlay : MonoBehaviour
 		if(!ovrHandler.OpenVRConnected)
 			return;
 		
-		if(!overlay.created)
-		{
-			if(!overlay.CreateOverlay())
-			{
-				Debug.Log("Failed to create overlay!");
+		if(!overlay.created) {
+			if(!overlay.CreateOverlay()) {
+				Debug.Log("Failed to create overlay!", gameObject);
 				return;
-			}
-			else
-			{
-				Debug.Log("Overlay Created!");
+			} else {
+				Debug.Log("Overlay Created!", gameObject);
 			}
 
 			isDashboardOpen = ovrHandler.Overlay.IsDashboardVisible();
 		}	
 
-		if(onlyShowInDashboard && !isDashboardOpen)
-		{
+		if(onlyShowInDashboard && !isDashboardOpen) {
 			if(isVisible)
 				isVisible = false;
-		}
-		else if (onlyShowInDashboard && isDashboardOpen)
-		{
+		} else if (onlyShowInDashboard && isDashboardOpen) {
 			if(!isVisible)
 				isVisible = true;
 		}

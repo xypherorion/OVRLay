@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3479847570748529327}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Right Wrist Deck Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,8 +580,7 @@ GameObject:
   - component: {fileID: 3479847571945513512}
   - component: {fileID: 3479847571945513515}
   - component: {fileID: 3479847571945513527}
-  - component: {fileID: 4531378960289626150}
-  - component: {fileID: 1885171783925623572}
+  - component: {fileID: 2724336324279341324}
   m_Layer: 7
   m_Name: Wrist Deck Canvas
   m_TagString: Untagged
@@ -684,7 +683,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &4531378960289626150
+--- !u!114 &2724336324279341324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -696,22 +695,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b9c145ac04df148b41b7d746f3af52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckButtonPrefab: {fileID: 0}
-  ButtonParentTransform: {fileID: 0}
---- !u!114 &1885171783925623572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3479847571945513517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b9c145ac04df148b41b7d746f3af52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeckButtonPrefab: {fileID: 0}
-  ButtonParentTransform: {fileID: 0}
+  DebugDeckId: 
+  DeckButtonPrefab: {fileID: 5167199719978065320, guid: 698830b774c837c43af17d3115d4472b,
+    type: 3}
+  ButtonParentTransform: {fileID: 3479847571878980368}
+  canvasGroup: {fileID: 3479847571945513527}
 --- !u!1001 &3143905522022672024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,6 +841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wrist Deck Event System
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545361646562334192, guid: 9211f97626363be4cae67093ae4579fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2545361646562334199, guid: 9211f97626363be4cae67093ae4579fa,
         type: 3}

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -110,8 +111,8 @@ public class Unity_SteamVR_Handler : MonoBehaviour
 
 	public void VREventHandler(VREvent_t e)
 	{
-		if(debugLog)
-			Debug.Log("VR Event: " + e);
+		//if(debugLog)
+		//	Debug.Log("VR Event: " + e.data.ToSafeString());
 	}
 
 	bool SteamVRStartup()

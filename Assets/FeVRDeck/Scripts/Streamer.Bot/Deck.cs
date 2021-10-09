@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using Valve.Newtonsoft.Json;
 
 namespace Streamer.Bot {
@@ -16,13 +17,12 @@ namespace Streamer.Bot {
         public Data.Deck data;
         private List<DeckButton> buttons = new List<DeckButton>();
 
-        public string PublicDeckId = "";
+        public string DebugDeckId = "";
         public DeckButton DeckButtonPrefab;
         public Transform ButtonParentTransform;
 
         //UI Elements
         public CanvasGroup canvasGroup;
-        public Unity_Overlay overlay;
 
         public Deck() : base() {}
         public Deck(Data.Deck data) : base() {
@@ -30,15 +30,33 @@ namespace Streamer.Bot {
         }
 
         async public void Start() {
-            if (!string.IsNullOrWhiteSpace(PublicDeckId)) {
-                data = await DownloadPublicDeck("https://streamer.bot/api/decks-public/" + PublicDeckId);
-                Build();
-            } else Debug.LogWarning("Public ID is NULL", gameObject);
+            if (data.Equals(default)) {
+                if (!string.IsNullOrWhiteSpace(DebugDeckId)) {
+                    data = await DownloadPublicDeck(DebugDeckId);
+                    Build();
+                } else
+                    Debug.LogWarning("No Debug Deck to Load", gameObject);
+            }
         }
 
+        async public Task Load(string publicId) {
+            data = default;
+            if (!string.IsNullOrWhiteSpace(publicId)) {
+                data = await DownloadPublicDeck(publicId);
+                Build();
+            } else {
+                Debug.LogWarning("Unloaded Deck", gameObject);
+            }
+        }
 
-        public async Task<Data.Deck> DownloadPublicDeck(string url) {
-            Debug.Log($"Downloading Public Deck {url}");
+        public async Task<Data.Deck> DownloadPublicDeck(string publicDeckId) {
+            if (string.IsNullOrWhiteSpace(publicDeckId)) {
+                Debug.LogError("Requested to download null public deck");
+                return default;
+            }
+            
+            string url = "https://streamer.bot/api/decks-public/" + publicDeckId;
+            Debug.Log("Downloading Public Deck " + url);
 
             using (UnityWebRequest www = UnityWebRequest.Get(url)) {
                 // begin request:
@@ -52,7 +70,7 @@ namespace Streamer.Bot {
                 // read results:
                 if (www.result != UnityWebRequest.Result.Success) {
                     // log error:
-                    Debug.Log($"{www.error}, URL:{www.url}");
+                    Debug.Log(www.error+ ", URL:" + url);
                 } else {
                     // return valid results:
                     try {
@@ -69,9 +87,17 @@ namespace Streamer.Bot {
         }
 
         private void Build() {
-            //Check if data is valid by checkind creation timestamp
+            if (DeckButtonPrefab == null)
+                Debug.LogError("Unable to build deck, Button Prefab is invalid");
+
+            //Check if data is valid by checking creation timestamp
             if (data.created_at != default) {
                 name = data.name;
+
+                foreach (DeckButton btn in buttons)
+                    Destroy(btn.gameObject);
+                buttons.Clear();
+
                 if (data.items != null && data.items.Length > 0) {
                     Data.DeckButton btnData;
                     DeckButton button;
@@ -86,7 +112,8 @@ namespace Streamer.Bot {
                     Debug.LogWarning("No Decks", gameObject);
                 }
             } else {
-                Debug.LogError("DeckData is invalid", gameObject);
+                Debug.LogWarning(data.ToString());
+                Debug.LogError("Deck created_at is invalid", gameObject);
             }
         }
 
