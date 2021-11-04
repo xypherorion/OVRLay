@@ -209,8 +209,7 @@ namespace Streamer.Bot {
                     $"\"name\": \"{cmd.name}\"" +
                 "}," +
                 "\"args\": {" +
-                    cmd.args +
-                    //"\"key\": \"value\"," +
+                    cmd.args + //"\"key\": \"value\"," +
                 "}," +
                 $"\"id\": \"{NextMessage}\"" +
             "}";
@@ -222,9 +221,6 @@ namespace Streamer.Bot {
         ConcurrentQueue<string> CommandQueue = new ConcurrentQueue<string>();
         string cmd;
         private async Task OnSend(ClientWebSocket webSocket) {
-            //var random = new System.Random();
-            //random.NextBytes(buffer);
-
             while (webSocket.State == System.Net.WebSockets.WebSocketState.Open) {
                 if (buffer != null && buffer.Length > 0) {
                     await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Binary, false, CancellationToken.None);
